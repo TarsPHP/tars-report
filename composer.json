@@ -1,7 +1,7 @@
 {
   "name": "phptars/tars-report",
   "description": "tars进行keep-alive上报的模块",
-  "version":"0.1.0",
+  "version":"0.1.1",
   "authors": [
     {
       "name": "Chen Liang",
@@ -15,12 +15,6 @@
   "autoload": {
     "psr-4": {
       "Tars\\report\\": "src/"
-    }
-  },
-  "repositories": {
-    "tars": {
-      "type": "composer",
-      "url": "https://raw.githubusercontent.com/Tencent/Tars/master/php/dist/tarsphp.json"
     }
   }
 }
