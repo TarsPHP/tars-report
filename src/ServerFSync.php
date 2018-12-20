@@ -36,7 +36,7 @@ class ServerFSync
             $tarsRequestBuf = \TUPAPI::encode($iVersion, $iRequestId, $servantName,
                 $funcName, $cPacketType, $iMessageType, $tarsTimeout, $contexts, $statuses, $encodeBufs);
 
-            $client = new \swoole_client(SWOOLE_SOCK_TCP | SWOOLE_KEEP);
+            $client = new \swoole_client(SWOOLE_SOCK_TCP);
 
             $timeout = 2;
             if (!$client->connect($this->_ip, $this->_port, $timeout)) {
