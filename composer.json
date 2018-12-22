@@ -1,11 +1,11 @@
 {
   "name": "phptars/tars-report",
   "description": "tars进行keep-alive上报的模块",
-  "version":"0.1.2",
+  "version":"0.1.3",
   "authors": [
     {
       "name": "Chen Liang",
-      "email": "liangchen@yuewen.com"
+      "email": "cedricliang21@gmail.com"
     }
   ],
   "minimum-stability": "dev",
