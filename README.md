@@ -1,22 +1,30 @@
-进行keepAlive上报的组件
+Components for keepalive reporting
 
-1、组件说明
-```
-	tarsphp框架在master进程启动的时候会上报服务存活状态(主进程存活&管理进程存活)。
-	在第一个worker进程启动的时候，会开启一个timer来定时上报存活状态。
-```
 
-2、文件说明：
+
+1. Component description
+
+` ` ` `
+
+When the master process is started, the tarsphp framework will report the service survival status (main process survival & management process survival).
+
+When the first worker process is started, a timer will be opened to regularly report the survival status.
+
+` ` ` `
+
+
+
+2. Document description:
 ```
 	├── composer.json
 	├── src
-	│ ├── NodeF.tars //协议文件
-	│ ├── ServerFAsync.php // 异步上报
-	│ ├── ServerFSync.php // 同步上报
+	│ ├── NodeF.tars //protocol file
+	│ ├── ServerFAsync.php // Asynchronous reporting
+	│ ├── ServerFSync.php // synchronous reporting
 	│ └── ServerInfo.php  //ServerInfo
 ```
 
-3、使用实例(假如服务为 PHPTest.test.obj)：
+3、Use instance (if service is PHPTest.test.obj)：
 ```
         $serverInfo = new ServerInfo();
         $serverInfo->adapter = 'PHPTest.test.objAdapter';
@@ -25,12 +33,12 @@
         $serverInfo->pid = $masterPid;
 
         $serverF = new ServerFSync($host, $port, $objName);
-        $serverF->keepAlive($serverInfo); //主进程存活
+        $serverF->keepAlive($serverInfo); //Main process survives
 
         $adminServerInfo = new ServerInfo();
         $adminServerInfo->adapter = 'AdminAdapter';
         $adminServerInfo->application = 'PHPTest';
         $adminServerInfo->serverName = 'test';
         $adminServerInfo->pid = $masterPid;
-        $serverF->keepAlive($adminServerInfo);//管理进程存活
+        $serverF->keepAlive($adminServerInfo);//Manage process survival
 ```
