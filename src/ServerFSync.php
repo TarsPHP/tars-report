@@ -39,7 +39,7 @@ class ServerFSync
             $client = new \swoole_client(SWOOLE_SOCK_TCP);
 
             $timeout = 2;
-            if (!$client->connect($this->_ip, $this->_port, $timeout)) {
+            if (!$client->connect($this->_ip, intval($this->_port), $timeout)) {
                 return 0;
             }
 
