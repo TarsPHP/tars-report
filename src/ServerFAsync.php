@@ -52,7 +52,7 @@ class ServerFAsync
             });
 
             $timeout = 2;
-            $client->connect($this->_ip, $this->_port, $timeout);
+            $client->connect($this->_ip, intval($this->_port), $timeout);
         } catch (\Exception $e) {
             return array(
                 'code' => $e->getCode(),
